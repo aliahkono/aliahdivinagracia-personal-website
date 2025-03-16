@@ -1,0 +1,772 @@
+/* CSS Reset */
+/* Import Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+meta {
+  display: none;
+}
+
+* {
+  color: #fffffe;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+body {
+  background: #232946;
+  color: #b8c1ec;
+}
+
+/* Header Section */
+.header {
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #eebbc3;
+}
+
+.menu-bar a {
+  font-size: 1.5rem;
+  margin: 3.5rem;
+  transition: 0.4s ease;
+}
+
+.menu-bar a:hover {
+  color: #eebbc3;
+}
+
+#menu-btn {
+  font-size: 3rem;
+  display: none;
+}
+
+section {
+  padding: 10rem 10%;
+  min-height: 100vh;
+}
+
+/* Home Section */
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-bio h3 {
+  font-size: 2.5rem;
+}
+
+span {
+  color: #eebbc3;
+}
+
+.home-bio h1 {
+  font-size: 3.5rem;
+  line-height: 1.4;
+}
+
+.home-bio p {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+}
+
+.auto-type {
+  display: inline-block;
+}
+
+.profile-pic {
+  position: relative;
+  width: 550px; /* Profile image size */
+  height: 315px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1f1f2e; /* Dark background for better contrast */
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Circular Animated Dashed Border */
+.profile-pic::before {
+  content: "";
+  position: absolute;
+  width: 320px; /* Ensure it's larger than the image */
+  height: 320px;
+  border-radius: 50%;
+  border: 4px dashed rgba(238, 187, 195, 1); /* Light pink with full opacity */
+  animation: rotate 3s linear infinite, glow 1.5s ease-in-out infinite alternate;
+  box-shadow: 0 0 12px rgba(238, 187, 195, 0.8); /* Added glow effect */
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glow {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+
+/* Highlights section */
+.highlights {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    max-width: 450px;
+}
+
+.highlight-item {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.highlight-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4e67e5; /* Match this with your site's color scheme */
+    display: block;
+}
+
+.highlight-item p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+
+
+.card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(37, 25, 55, 0.055);
+}
+
+/* Social Containers */
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+
+.containerThree:hover {
+  background-color: #0b0b0b;
+  transition-duration: .3s;
+}
+
+.containerFour:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Button Styles */
+.btn-53,
+.btn-53 *,
+.btn-53 :after,
+.btn-53 :before,
+.btn-53:after,
+.btn-53:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+
+.btn-53 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+
+.btn-53:disabled {
+  cursor: default;
+}
+
+.btn-53:-moz-focusring {
+  outline: auto;
+}
+
+.btn-53 svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.btn-53 [hidden] {
+  display: none;
+}
+
+.btn-53 {
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.btn-53 .original {
+  background: #fff;
+  color: #000;
+  display: grid;
+  inset: 0;
+  place-content: center;
+  position: absolute;
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-53:hover .original {
+  transform: translateY(100%);
+}
+
+.btn-53 .letters {
+  display: inline-flex;
+}
+
+.btn-53 span {
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+}
+
+.btn-53 span:nth-child(2n) {
+  transform: translateY(15px);
+}
+
+.btn-53:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-53:hover span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.btn-53:hover span:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.btn-53:hover span:nth-child(4) {
+  transition-delay: 0.3s;
+}
+
+.btn-53:hover span:nth-child(5) {
+  transition-delay: 0.4s;
+}
+
+.btn-53:hover span:nth-child(6) {
+  transition-delay: 0.5s;
+}
+
+/* From Uiverse.io by Peary74 */ 
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: #212121;
+  color: white;
+  fill: rgb(155, 153, 153);
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  font-weight: 1000;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #000;
+}
+
+button:hover .svg-wrapper {
+  transform: scale(1.25);
+  transition: 0.5s linear;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) scale(1.1);
+  fill: #fff;
+}
+
+button:hover span {
+  opacity: 0;
+  transition: 0.5s linear;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Container for the buttons */
+.action-buttons {
+  display: flex;
+  align-items: left;
+  width: 100%; /* Full width of parent container */
+  max-width: 650px; /* Adjust based on your design */
+  margin: 0 auto; /* Centers the container */
+  gap: 2cm; /* Ensures 3 cm space between buttons */
+}
+
+/* Ensuring buttons have proper spacing */
+.action-buttons button {
+  flex: none; /* Prevents buttons from stretching */
+}
+
+/* About Section */
+.about {
+  background-color: #d4d8f0;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: #232946;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-col-1 img {
+  width: 100%;
+  height: 65%;
+  border-radius: 30px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.about-col-1 img:hover {
+  transform: scale(1.1);
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+}
+
+.sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.about-col-2 p {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: #232946;
+}
+
+.about span {
+  color: #eebbc3;
+}
+
+.tab-titles {
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #eebbc3;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+  width: 50%;
+}
+
+/* Preserve Layout Height to Prevent Page Jump */
+.tab-container {
+  min-height: 300px; /* Adjust based on content */
+  position: relative;
+}
+
+.tab-contents ul li {
+  font-size: smedded;
+  color: #6d6e88;
+  list-style: none;
+  margin: 10px 0;
+}
+
+.tab-contents ul li span {
+  color: #454766;
+  font-size: 14px;
+}
+
+/* Instead of display: none; use position absolute to prevent reflow */
+.tab-contents {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.tab-contents.active-tab {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+
+
+/* Hobbies Section */
+.hobbies {
+  background-color: #232946;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: #b8c1ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hobbies span {
+  color: #d4939d;
+}
+
+.heading {
+  margin: 0;
+  font-size: 24px;
+}
+
+.hobbies-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hobbies-card {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.hobbies-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hobbies-img {
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.hobbies-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hobbies-card:hover .hobbies-img img {
+  transform: scale(1.1);
+}
+
+.content {
+  padding: 20px;
+}
+
+.h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.p {
+  font-size: 14px;
+  color: #b8c1ec;
+}
+
+/* Education Section */
+.education {
+  background-color: #d4939d;
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: #232946;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.education span {
+  color: #232946;
+}
+
+.heading {
+  margin: 0;
+  font-size: 24px;
+}
+
+.logo-con {
+  background-image: url('https://mseuf.edu.ph/assets/article_files/source/ok%20(2).jpg');
+  background-size: cover;
+  background-position: center;
+  width: 85%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.col-md-4 {
+  flex: 1;
+}
+
+.col-md-8 {
+  flex: 2;
+}
+
+.college-logo img {
+  width: 100%;
+  height: auto;
+}
+
+.info h3 {
+  color: #800000;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.info p {
+  position: relative;
+  bottom: 30px;
+  color: #cd2baf;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info h3,
+.info p {
+  background-color: #232946;
+  background-blend-mode: lighten;
+}
+
+/* Footer Section */
+.footer h3 {
+  width: 300px;
+  color: #232946;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s;
+}
+
+.footer p {
+  color: #d4939d;
+}
+
+/* Responsive Section */
+@media (max-width: 1200px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 2rem 4%;
+  }
+
+  .home img {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 767px) {
+  #menu-btn {
+    display: block;
+  }
+
+  .menu-bar {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+  }
+
+  .menu-bar.active {
+    display: block;
+  }
+
+  .menu-bar a {
+    display: block;
+    margin: 2rem;
+    font-size: 2rem;
+  }
+
+  .home,
+  .hobbies-items {
+    flex-direction: column;
+  }
+
+  .home img {
+    width: 80vw;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  .hobbies-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .hobbies-items {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .heading {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
